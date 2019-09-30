@@ -1,4 +1,4 @@
-package com.lambdaschool.notetakerroom.prefs
+package com.lambdaschool.notetaker
 
 import com.lambdaschool.notetakerroom.model.Note
 import com.lambdaschool.notetakerroom.ui.MainActivity
@@ -60,14 +60,14 @@ object SharedPrefsDao {
     }
 
     fun setNote(note: Note) {
-        if (note.getId() == Note.NO_ID) {
-            note.setId(nextId)
+        if (note.id.toString() == Note.NO_ID) {
+            note.id = nextId.toLong()
         }
         val ids = allIds
         var exists = false
         for (id in ids) {
             if (id != "") {
-                if (note.getId() == id) {
+                if (note.id.toString() == id) {
                     exists = true
                     break
                 }
@@ -75,7 +75,7 @@ object SharedPrefsDao {
         }
 
         if (!exists) {
-            addId(note.getId())
+            addId(note.id.toString())
         }
 
         addNote(note)
@@ -83,7 +83,7 @@ object SharedPrefsDao {
 
     private fun addNote(note: Note) {
         val editor = MainActivity.preferences?.edit()
-        editor?.putString(KEY_ID_PREFIX + note.getId()!!, note.toCsvString())
+        editor?.putString(KEY_ID_PREFIX + note.id.toString()!!, note.toCsvString())
         editor?.apply()
     }
 

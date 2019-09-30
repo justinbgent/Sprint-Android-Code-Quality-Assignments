@@ -79,7 +79,7 @@ object NotesDbDao {
             values.put(NotesDbContract.NotesEntry.COLUMN_NAME_CONTENT, note.content)
             values.put(NotesDbContract.NotesEntry.COLUMN_NAME_TIMESTAMP, note.timestamp)
             values.put(NotesDbContract.NotesEntry.COLUMN_NAME_TITLE, note.title)
-            values.put(NotesDbContract.NotesEntry.COLUMN_NAME_FB_ID, note.getId())
+            values.put(NotesDbContract.NotesEntry.COLUMN_NAME_FB_ID, note.id)
 
             val resultId = db!!.insert(NotesDbContract.NotesEntry.TABLE_NAME, null, values)
 
@@ -94,7 +94,7 @@ object NotesDbDao {
                                       NotesDbContract.NotesEntry.COLUMN_NAME_CONTENT,
                                       NotesDbContract.NotesEntry.COLUMN_NAME_TIMESTAMP,
 
-                                      note.getId(),
+                                      note.id,
                                       note.getTitle(),
                                       note.getContent(),
                                       note.getTimestamp()));*/
@@ -105,7 +105,7 @@ object NotesDbDao {
         if (db != null) {
             val whereClause = String.format("%s = '%s'",
                     NotesDbContract.NotesEntry.COLUMN_NAME_FB_ID,
-                    note.getId())
+                    note.id)
 
             val cursor = db!!.rawQuery(String.format("SELECT * FROM %s WHERE %s",
                     NotesDbContract.NotesEntry.TABLE_NAME,
@@ -126,7 +126,7 @@ object NotesDbDao {
         if (db != null) {
             val whereClause = String.format("%s = '%s'",
                     NotesDbContract.NotesEntry.COLUMN_NAME_FB_ID,
-                    note.getId())
+                    note.id)
 
             val affectedRows = db!!.delete(NotesDbContract.NotesEntry.TABLE_NAME, whereClause, null)
         }
@@ -141,7 +141,7 @@ object NotesDbDao {
         for (fbNote in fbNotes) {
             var noteFound = false
             for (cacheNote in cacheNotes) {
-                if (fbNote.getId() == cacheNote.getId()) {
+                if (fbNote.id == cacheNote.id) {
                     // if note does exist, check for timestamp
                     if (fbNote.timestamp > cacheNote.timestamp) {
                         // if fb is newer update cache
