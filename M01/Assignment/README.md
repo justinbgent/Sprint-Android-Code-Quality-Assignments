@@ -12,3 +12,13 @@ As a recap, the project when working properly should:
 
 - Allow the user to create notes that are saved to a Firebase Database and an on-device persistent store using an SQL database
 - The device's persistent store is synchronized with the Firebase Database. (When a journal entry is saved to the device's persistent store it gets sent to Firebase, and vice-versa.
+
+
+## Fixes
+
+-Manifest missing activities and intent filter
+-NoteViewModel loadList fun is missing parameter in NoteRepository() object
+-Change SharedPrefsDao non-existent getId and setId functions to .id.toString() and note.id =
+-Change NotesDbDao .getId() fun to .id
+-Constraint layout implementation missing in build.gradle file
+-Missing drawables in pref_headers.xml, commented out all android:icon uses
