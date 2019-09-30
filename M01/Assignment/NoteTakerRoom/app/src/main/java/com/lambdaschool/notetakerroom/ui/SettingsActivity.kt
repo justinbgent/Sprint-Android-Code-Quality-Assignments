@@ -16,7 +16,7 @@ import android.preference.PreferenceManager
 import android.preference.RingtonePreference
 import android.text.TextUtils
 import android.view.MenuItem
-import com.lambdaschool.notetaker.ThemeUtils
+import com.lambdaschool.notetakerroom.ThemeUtils
 import com.lambdaschool.notetakerroom.R
 
 /**

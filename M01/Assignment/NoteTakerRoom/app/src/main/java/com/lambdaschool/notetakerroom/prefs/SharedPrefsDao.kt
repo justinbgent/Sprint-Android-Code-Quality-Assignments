@@ -1,5 +1,6 @@
-package com.lambdaschool.notetaker
+package com.lambdaschool.notetakerroom.prefs
 
+import com.lambdaschool.notetakerroom.model.Note
 import com.lambdaschool.notetakerroom.ui.MainActivity
 
 import java.util.ArrayList

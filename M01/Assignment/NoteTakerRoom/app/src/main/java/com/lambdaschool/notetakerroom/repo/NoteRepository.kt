@@ -1,9 +1,11 @@
-package com.lambdaschool.notetaker
+package com.lambdaschool.notetakerroom.repo
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.room.Room
+import com.lambdaschool.notetakerroom.db.NotesDbDao
 import com.lambdaschool.notetakerroom.db.NotesRoomDB
+import com.lambdaschool.notetakerroom.model.Note
 import java.util.*
 
 class NoteRepository(context: Context) {

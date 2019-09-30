@@ -1,4 +1,4 @@
-package com.lambdaschool.notetaker
+package com.lambdaschool.notetakerroom.recycler
 
 import android.app.Activity
 import android.content.Context
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.lambdaschool.notetakerroom.model.Note
 import com.lambdaschool.notetakerroom.R
 import com.lambdaschool.notetakerroom.ui.EditActivity
 import com.lambdaschool.notetakerroom.ui.MainActivity

@@ -13,6 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.lambdaschool.notetaker.*
 import com.lambdaschool.notetakerroom.R
+import com.lambdaschool.notetakerroom.ThemeUtils
+import com.lambdaschool.notetakerroom.model.Note
+import com.lambdaschool.notetakerroom.recycler.NoteListAdapter
+import com.lambdaschool.notetakerroom.vm.NoteViewModel
 
 import java.util.ArrayList
 

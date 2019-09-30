@@ -1,9 +1,11 @@
-package com.lambdaschool.notetaker
+package com.lambdaschool.notetakerroom.vm
 
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.lambdaschool.notetakerroom.model.Note
+import com.lambdaschool.notetakerroom.repo.NoteRepository
 
 import java.util.ArrayList
 

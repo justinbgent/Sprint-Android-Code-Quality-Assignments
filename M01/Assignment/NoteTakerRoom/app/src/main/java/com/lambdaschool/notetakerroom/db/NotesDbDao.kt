@@ -1,9 +1,10 @@
-package com.lambdaschool.notetaker
+package com.lambdaschool.notetakerroom.db
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import com.lambdaschool.notetakerroom.model.Note
 
 import java.util.ArrayList
 

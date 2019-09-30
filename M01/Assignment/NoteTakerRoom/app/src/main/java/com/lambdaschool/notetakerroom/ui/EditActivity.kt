@@ -4,8 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.lambdaschool.notetaker.Note
-import com.lambdaschool.notetaker.ThemeUtils
+import com.lambdaschool.notetakerroom.model.Note
+import com.lambdaschool.notetakerroom.ThemeUtils
 import com.lambdaschool.notetakerroom.R
 import kotlinx.android.synthetic.main.activity_edit.*
 

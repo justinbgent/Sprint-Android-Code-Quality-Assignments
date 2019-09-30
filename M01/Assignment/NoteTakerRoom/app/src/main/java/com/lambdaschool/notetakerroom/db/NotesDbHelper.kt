@@ -1,4 +1,4 @@
-package com.lambdaschool.notetaker
+package com.lambdaschool.notetakerroom.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
