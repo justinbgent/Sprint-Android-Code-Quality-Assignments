@@ -1,4 +1,4 @@
-package com.lambdaschool.notetakerroom
+package com.lambdaschool.notetakerroom.db
 
 import androidx.room.Dao
 import androidx.room.Insert

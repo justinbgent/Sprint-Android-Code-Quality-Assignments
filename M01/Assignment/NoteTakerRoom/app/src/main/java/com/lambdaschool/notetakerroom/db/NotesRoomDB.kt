@@ -1,4 +1,4 @@
-package com.lambdaschool.notetakerroom
+package com.lambdaschool.notetakerroom.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
