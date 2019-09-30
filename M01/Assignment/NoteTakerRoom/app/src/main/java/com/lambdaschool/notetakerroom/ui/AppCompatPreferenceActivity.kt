@@ -1,4 +1,4 @@
-package com.lambdaschool.notetaker
+package com.lambdaschool.notetakerroom.ui
 
 import android.content.res.Configuration
 import android.os.Bundle
