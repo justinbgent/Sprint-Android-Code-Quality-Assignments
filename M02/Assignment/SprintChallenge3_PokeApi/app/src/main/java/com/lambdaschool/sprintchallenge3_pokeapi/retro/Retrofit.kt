@@ -1,12 +1,15 @@
 package com.lambdaschool.sprintchallenge3_pokeapi.retro
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.google.gson.GsonBuilder
 import com.google.gson.annotations.SerializedName
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import java.util.concurrent.TimeUnit
 
 interface RetroApiInterface {
     @GET("{IdOrName}")
@@ -15,10 +18,17 @@ interface RetroApiInterface {
 
 object RetroFunction{
     fun getPokemonInfo(idOrName: String): Call<PokemonDetail> {
-        val gson = GsonBuilder().setLenient().create()
+        val okHttpClient = OkHttpClient.Builder()
+                .addNetworkInterceptor(StethoInterceptor())
+                .retryOnConnectionFailure(false)
+                .readTimeout(10, TimeUnit.SECONDS)
+                .connectTimeout(12, TimeUnit.SECONDS)
+                .build()
 
+        val gson = GsonBuilder().setLenient().create()
         val retro = Retrofit.Builder()
                 .baseUrl("https://pokeapi.co/api/v2/pokemon/")
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
 
