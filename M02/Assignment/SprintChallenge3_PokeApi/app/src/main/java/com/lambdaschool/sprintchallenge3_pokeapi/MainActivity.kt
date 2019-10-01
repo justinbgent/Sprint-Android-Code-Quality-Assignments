@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import com.lambdaschool.sprintchallenge3_pokeapi.retro.RetroFunction
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,13 +20,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         context = this
-        names_list_layout
 
-        findViewById<View>(R.id.search_button).setOnClickListener {
+        search_button.setOnClickListener {
             val intent = Intent(context, PokemonDetailsActivity::class.java)
-            intent.putExtra("Search_Parameter", (findViewById<View>(R.id.search_bar) as EditText).text.toString())
+            intent.putExtra("Search_Parameter", search_bar.text.toString())
             startActivityForResult(intent, 0)
         }
+
+
     }
 
     private fun buildTextView(name: String?): TextView {
@@ -49,8 +51,10 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
                 0 -> {
-                    val pokemon = data!!.getSerializableExtra("pokemon") as Pokemon
-                    names_list_layout?.addView(buildTextView(pokemon.name))
+                    //val pokemon = data!!.getSerializableExtra("pokemon") as Pokemon
+                    //names_list_layout?.addView(buildTextView(pokemon.name))
+                    val pokemon = data!!.getStringExtra("pokemon")
+                    names_list_layout?.addView(buildTextView(pokemon))
                 }
             }
         }
