@@ -31,14 +31,12 @@ class MainActivity : AppCompatActivity() {
             AlertDialog.Builder(this@MainActivity)
                     .setTitle("Delete entry")
                     .setMessage("Test")
-
                     // Specifying a listener allows you to take an action before dismissing the dialog.
                     // The dialog is automatically dismissed when a dialog button is clicked.
                     .setPositiveButton(android.R.string.yes,
                             DialogInterface.OnClickListener { dialog, which ->
                                 dialog.dismiss()
                             })
-
                     // A null listener allows the button to dismiss the dialog and take no further action.
                     .setNegativeButton(android.R.string.no, null)
                     .setIcon(android.R.drawable.ic_dialog_alert)
