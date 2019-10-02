@@ -50,40 +50,70 @@ class CalculatorUnitTests {
     }
 
     @Test
-    fun factorialInputSmallNums(){
+    fun sqrtSumesInputSmallNums(){
         val num1 = 9.0
         val num2 = 16.0
         val expected = 7.0
 
         `when`(mathMock.sumOfPositiveNumbersSquareRoots(num1, num2)).thenReturn(expected)
 
-        val result = calc.factorial(num1, num2)
+        val result = calc.sqrtSums(num1, num2)
 
         assertEquals(expected, result)
     }
 
     @Test
-    fun factorialInputBigNums(){
+    fun sqrtSumesInputBigNums(){
         val num1 = 144.0
         val num2 = 81.0
         val expected = 21.0
 
         `when`(mathMock.sumOfPositiveNumbersSquareRoots(num1, num2)).thenReturn(expected)
 
-        val result = calc.factorial(num1, num2)
+        val result = calc.sqrtSums(num1, num2)
 
         assertEquals(expected, result)
     }
 
     @Test
-    fun factorialWithoutMock(){
+    fun sqrtSumesWithoutMock(){
         val num1 = 144.0
         val num2 = 81.0
         val expected = 21.0
 
         val math = Math()
         val calculator = Calculator(math)
-        val result = calculator.factorial(num1, num2)
+        val result = calculator.sqrtSums(num1, num2)
+
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun factorialTest(){
+        val num = 4
+        val expected = 24
+
+        val result = calc.factorial(num)
+
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun factorialNegativeInt(){
+        val num = -4
+        val expected = null
+
+        val result = calc.factorial(num)
+
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun factorialZero(){
+        val num = 0
+        val expected = 1
+
+        val result = calc.factorial(num)
 
         assertEquals(expected, result)
     }
